@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --crisis-red: #DC2626;
+  --crisis-red-dark: #991B1B;
+  --crisis-amber: #D97706;
+  --crisis-green: #16A34A;
+}
+
+body {
+  @apply bg-slate-950 text-white;
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .sos-glow {
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.5), 0 0 60px rgba(220, 38, 38, 0.2);
+  }
+  .sos-glow:hover {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.7), 0 0 80px rgba(220, 38, 38, 0.3);
+  }
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.ripple-ring {
+  animation: ripple 1.5s ease-out infinite;
+}
+
+.ripple-ring-2 {
+  animation: ripple 1.5s ease-out 0.5s infinite;
+}
+
+.ripple-ring-3 {
+  animation: ripple 1.5s ease-out 1s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
